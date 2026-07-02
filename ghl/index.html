@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="We build and run your entire client-getting system for you — offer, funnel, ads and sales — so you can get to consistent $20k+ months. For coaches, consultants and agency owners doing $5k+/month." />
+  <title>Done-For-You Growth System | Processes for Profits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <!--
+    META PIXEL: if your pixel isn't already installed site-wide in GHL
+    (Settings → Tracking Code), paste the pixel base code here.
+  -->
+  <style>
+/* ============================================================
+   P4P DFY Funnel — shared styles
+   This file is duplicated inline inside each page's <style> tag
+   so every page stays fully self-contained for GHL.
+   Edit here first, then copy into the pages, to keep them in sync.
+   ============================================================ */
+:root {
+  --bg: #050816;
+  --card: rgba(255, 255, 255, 0.03);
+  --card-strong: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.1);
+  --accent: #10b981;
+  --accent-light: #34d399;
+  --accent-glow: rgba(16, 185, 129, 0.55);
+  --amber: #fbbf24;
+  --rose: #fb7185;
+  --sky: #38bdf8;
+  --text: #ffffff;
+  --muted: #94a3b8;
+  --dim: #64748b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+.wrap { position: relative; max-width: 1020px; margin: 0 auto; padding: 0 24px; }
+.glow {
+  position: absolute; border-radius: 50%; filter: blur(90px); opacity: .18;
+  pointer-events: none; z-index: 0;
+}
+.glow-1 { top: -120px; left: -10%; width: 480px; height: 480px; background: var(--accent); }
+.glow-2 { top: 45%; right: -12%; width: 400px; height: 400px; background: #2563eb; }
+section { position: relative; z-index: 1; padding: 72px 0; }
+.center { text-align: center; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(52, 211, 153, .3); background: rgba(52, 211, 153, .1);
+  color: var(--accent-light); border-radius: 999px; padding: 7px 18px;
+  font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+}
+h1 { font-size: clamp(34px, 5.4vw, 58px); font-weight: 800; line-height: 1.1; letter-spacing: -.02em; }
+h2 { font-size: clamp(26px, 3.6vw, 38px); font-weight: 800; line-height: 1.2; }
+h3 { font-size: 20px; font-weight: 700; }
+.grad { background: linear-gradient(90deg, var(--accent-light), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.sub { color: var(--muted); font-size: clamp(17px, 2vw, 20px); max-width: 640px; margin: 20px auto 0; }
+.note { color: var(--dim); font-size: 14px; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--accent); color: #041014; text-decoration: none;
+  font-size: 19px; font-weight: 800; padding: 18px 38px; border-radius: 18px;
+  box-shadow: 0 0 40px -8px var(--accent-glow); border: none; cursor: pointer;
+  transition: background .2s, transform .2s, box-shadow .2s;
+}
+.btn:hover { background: var(--accent-light); transform: translateY(-1px); box-shadow: 0 0 60px -8px var(--accent-glow); }
+.btn .arrow { transition: transform .2s; }
+.btn:hover .arrow { transform: translateX(4px); }
+.btn-note { display: block; margin-top: 10px; font-size: 12.5px; color: var(--dim); }
+
+.card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 26px;
+}
+.grid { display: grid; gap: 20px; }
+@media (min-width: 760px) {
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+.icon { font-size: 26px; line-height: 1; }
+.muted { color: var(--muted); }
+
+.embed-slot {
+  border: 2px dashed rgba(52, 211, 153, .4); border-radius: 20px;
+  background: rgba(52, 211, 153, .04); padding: 48px 24px; text-align: center;
+  color: var(--muted); font-size: 15px;
+}
+.embed-slot strong { color: var(--accent-light); }
+.embed-slot code {
+  display: inline-block; margin-top: 8px; background: rgba(255,255,255,.06);
+  border-radius: 8px; padding: 3px 10px; font-size: 13px; color: var(--text);
+}
+
+.steps { counter-reset: step; }
+.step-num {
+  display: flex; width: 46px; height: 46px; align-items: center; justify-content: center;
+  background: rgba(52, 211, 153, .12); color: var(--accent-light);
+  font-weight: 800; font-size: 18px; border-radius: 14px; margin-bottom: 14px;
+}
+.checklist { list-style: none; }
+.checklist li { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; color: var(--muted); }
+.checklist .tick { color: var(--accent); font-weight: 800; flex-shrink: 0; }
+.checklist .cross { color: var(--rose); font-weight: 800; flex-shrink: 0; }
+
+details.faq {
+  background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+  padding: 22px 26px; margin-bottom: 14px;
+}
+details.faq[open] { border-color: rgba(52, 211, 153, .35); }
+details.faq summary { cursor: pointer; font-weight: 700; font-size: 17px; list-style: none; }
+details.faq summary::-webkit-details-marker { display: none; }
+details.faq p { margin-top: 12px; color: var(--muted); }
+
+footer {
+  border-top: 1px solid var(--border); padding: 44px 24px; text-align: center;
+  position: relative; z-index: 1;
+}
+footer p { max-width: 860px; margin: 0 auto 14px; font-size: 12px; color: var(--dim); }
+footer .brand { font-size: 13px; font-weight: 600; color: var(--muted); }
+footer a { color: var(--accent-light); }
+
+.progress-wrap { max-width: 560px; margin: 0 auto 36px; }
+.progress-labels { display: flex; justify-content: space-between; font-size: 12px; color: var(--dim); margin-bottom: 8px; }
+.progress-bar { height: 8px; border-radius: 999px; background: rgba(255,255,255,.1); overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 999px; background: var(--accent); }
+
+.video-frame {
+  position: relative; width: 100%; padding-top: 56.25%;
+  border-radius: 20px; overflow: hidden; border: 1px solid var(--border); background: #0b1120;
+}
+.video-frame iframe, .video-frame .embed-slot-abs {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+}
+  </style>
+</head>
+<body>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <!-- ============ HERO ============ -->
+  <section class="center" style="padding-top:96px;">
+    <div class="wrap">
+      <span class="eyebrow">For coaches, consultants &amp; agency owners doing $5k+/month</span>
+      <h1 style="max-width:900px;margin:26px auto 0;">
+        We Build &amp; Run Your Entire Client-Getting System
+        <span class="grad">For You</span> — So You Can Get to Consistent $20k+ Months
+      </h1>
+      <p class="sub">
+        Not another course. Not more coaching calls. Our team builds your offer, funnel,
+        ads and sales process — and implements all of it with you over 3 months.
+        Backed by our results guarantee.
+      </p>
+      <div style="margin-top:40px;">
+        <a class="btn" href="/pre-booking">Apply to Work With Us <span class="arrow">→</span></a>
+        <span class="btn-note">🛡 Free 2-minute application · No obligation</span>
+      </div>
+      <p class="note" style="margin-top:22px;">
+        We only take on 10 new clients per month — every application is personally reviewed.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ TRUST STRIP ============ -->
+  <section style="padding:32px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--card);">
+    <div class="wrap grid grid-4" style="font-size:14px;color:var(--muted);">
+      <div>📈 12+ years in lead generation &amp; coaching</div>
+      <div>👥 Max 10 new clients per month</div>
+      <div>⚙️ Done for you AND implemented for you</div>
+      <div>🛡 Results guarantee on every engagement</div>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEM ============ -->
+  <section>
+    <div class="wrap">
+      <div class="center" style="margin-bottom:44px;">
+        <span class="eyebrow">Sound familiar?</span>
+        <h2 style="margin-top:18px;">You Don't Have a Knowledge Problem.<br />
+          <span class="grad">You Have an Implementation Problem.</span></h2>
+      </div>
+      <div class="grid" style="max-width:760px;margin:0 auto;">
+        <div class="card" style="display:flex;gap:16px;"><span class="icon">🔥</span>
+          <p class="muted">You're great at what you do — but your income still depends on referrals, luck and hustle.</p></div>
+        <div class="card" style="display:flex;gap:16px;"><span class="icon">🔥</span>
+          <p class="muted">You've bought the courses and sat through the coaching programs… and you're still the one doing everything.</p></div>
+        <div class="card" style="display:flex;gap:16px;"><span class="icon">🔥</span>
+          <p class="muted">Leads are inconsistent, so revenue is inconsistent — one great month, then two quiet ones.</p></div>
+        <div class="card" style="display:flex;gap:16px;"><span class="icon">🔥</span>
+          <p class="muted">You know ads and funnels work. You just don't have the time (or desire) to become a media buyer, copywriter and funnel builder.</p></div>
+      </div>
+      <p class="center" style="max-width:640px;margin:40px auto 0;font-size:18px;color:var(--muted);">
+        Every "guru" sells you another thing to <em>learn</em>. We do the opposite:
+        our team <strong style="color:var(--text);">builds and runs the system with you</strong>,
+        so the bottleneck — you doing everything — is finally removed.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ MECHANISM ============ -->
+  <section>
+    <div class="wrap">
+      <div class="center" style="margin-bottom:44px;">
+        <span class="eyebrow">The P4P Done-For-You System</span>
+        <h2 style="margin-top:18px;">One Team. One System. Every Piece Handled.</h2>
+        <p class="sub">Over 3 months we build, launch and run the four pieces every consistent $20k+/month business has:</p>
+      </div>
+      <div class="grid grid-2">
+        <div class="card"><div class="icon" style="margin-bottom:12px;">🎯</div>
+          <h3>1. Irresistible Offer</h3>
+          <p class="muted" style="margin-top:8px;">We rebuild your offer and positioning so the right clients see it and think "this was made for me" — before you ever get on a call.</p></div>
+        <div class="card"><div class="icon" style="margin-bottom:12px;">📣</div>
+          <h3>2. Predictable Lead Flow</h3>
+          <p class="muted" style="margin-top:8px;">We write, build and launch your ads and funnel for you — then manage and optimise them so qualified leads arrive every week, not every referral.</p></div>
+        <div class="card"><div class="icon" style="margin-bottom:12px;">📅</div>
+          <h3>3. Booked Sales Calls</h3>
+          <p class="muted" style="margin-top:8px;">Leads are filtered and pre-qualified before they hit your calendar, so you only talk to people who are ready to buy.</p></div>
+        <div class="card"><div class="icon" style="margin-bottom:12px;">💰</div>
+          <h3>4. Sales That Convert</h3>
+          <p class="muted" style="margin-top:8px;">We install a simple, non-sleazy sales process (scripts, follow-up, tracking) and refine it with you until the numbers work.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW IT WORKS ============ -->
+  <section>
+    <div class="wrap">
+      <div class="center" style="margin-bottom:44px;">
+        <span class="eyebrow">How it works</span>
+        <h2 style="margin-top:18px;">From Ad Click to Growth Plan in 3 Steps</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="card"><div class="step-num">1</div>
+          <h3>Apply (2 minutes)</h3>
+          <p class="muted" style="margin-top:8px;font-size:15px;">Answer a few quick questions about your business so we can see if the DFY system is genuinely a fit for where you are.</p></div>
+        <div class="card"><div class="step-num">2</div>
+          <h3>Secure your call for $1</h3>
+          <p class="muted" style="margin-top:8px;font-size:15px;">If you qualify, you'll reserve your strategy session with a fully-refundable $1 deposit. It's not about the money — it filters out the tyre-kickers ads attract, so serious applicants get our full attention.</p></div>
+        <div class="card"><div class="step-num">3</div>
+          <h3>Book your strategy call</h3>
+          <p class="muted" style="margin-top:8px;font-size:15px;">Pick a time on our calendar. On the call we'll map out your growth plan — and if we both agree it's a fit, we'll show you exactly how the DFY program works.</p></div>
+      </div>
+      <div class="center" style="margin-top:44px;">
+        <a class="btn" href="/pre-booking">Start My Application <span class="arrow">→</span></a>
+        <span class="btn-note">🛡 Free 2-minute application · No obligation</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROOF (replace placeholders with real clients) ============ -->
+  <section>
+    <div class="wrap">
+      <div class="center" style="margin-bottom:44px;">
+        <span class="eyebrow">Client results</span>
+        <h2 style="margin-top:18px;">Real Businesses. Real Systems. Real Growth.</h2>
+        <p class="sub">A few of the coaches, consultants and agency owners we've built systems for.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card">
+          <p class="muted">“Within 90 days we went from relying on referrals to a full calendar of qualified calls every week.”</p>
+          <p style="margin-top:20px;font-weight:700;">Client Name</p>
+          <p style="font-size:14px;color:var(--accent-light);">Business coach · $6k → $22k/month</p>
+        </div>
+        <div class="card">
+          <p class="muted">“They didn't just tell us what to do — they built the whole thing. Ads, funnel, follow-up, everything.”</p>
+          <p style="margin-top:20px;font-weight:700;">Client Name</p>
+          <p style="font-size:14px;color:var(--accent-light);">Consultant · 3.1x revenue in one quarter</p>
+        </div>
+        <div class="card">
+          <p class="muted">“The first agency-style service I've used that actually delivered what the sales page promised.”</p>
+          <p style="margin-top:20px;font-weight:700;">Client Name</p>
+          <p style="font-size:14px;color:var(--accent-light);">Agency owner · $11k → $34k/month</p>
+        </div>
+      </div>
+      <p class="center note" style="margin-top:22px;">Individual results vary. See earnings disclaimer below.</p>
+    </div>
+  </section>
+
+  <!-- ============ GUARANTEE ============ -->
+  <section>
+    <div class="wrap">
+      <div class="card center" style="border-color:rgba(52,211,153,.35);background:linear-gradient(135deg,rgba(52,211,153,.1),transparent);padding:52px 32px;border-radius:28px;">
+        <div class="icon" style="font-size:48px;">🛡</div>
+        <h2 style="max-width:640px;margin:22px auto 0;">Hit Your Revenue Goal in 3 Months — Or Your Money Back</h2>
+        <p class="sub">
+          We agree on your monthly recurring revenue target together, up front, on your
+          strategy call. If you do the work with us and we don't hit it, you get your
+          money back. That's why we cap intake at 10 clients a month — we only take on
+          businesses we're confident we can grow.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHO IT'S FOR ============ -->
+  <section>
+    <div class="wrap">
+      <div class="center" style="margin-bottom:44px;">
+        <span class="eyebrow">Be honest with yourself</span>
+        <h2 style="margin-top:18px;">This Is NOT For Everyone</h2>
+        <p class="sub">The application exists to protect your time and ours. Here's the honest breakdown:</p>
+      </div>
+      <div class="grid grid-2">
+        <div class="card" style="border-color:rgba(52,211,153,.3);background:rgba(52,211,153,.05);">
+          <h3 style="color:var(--accent-light);margin-bottom:16px;">👍 A great fit if…</h3>
+          <ul class="checklist">
+            <li><span class="tick">✓</span> Coaches, consultants or agency owners already making $5k+/month</li>
+            <li><span class="tick">✓</span> You have an offer that gets clients results (even if it needs sharpening)</li>
+            <li><span class="tick">✓</span> You have capacity to take on more clients right now</li>
+            <li><span class="tick">✓</span> You're ready to invest in growth — and want experts to build it, not another DIY course</li>
+          </ul>
+        </div>
+        <div class="card" style="border-color:rgba(251,113,133,.25);background:rgba(251,113,133,.05);">
+          <h3 style="color:var(--rose);margin-bottom:16px;">👎 Not a fit if…</h3>
+          <ul class="checklist">
+            <li><span class="cross">✕</span> You're pre-revenue or still figuring out what you sell</li>
+            <li><span class="cross">✕</span> You want a magic button with zero involvement in your own business</li>
+            <li><span class="cross">✕</span> You're not willing to run paid traffic to your offer</li>
+            <li><span class="cross">✕</span> You need guaranteed income promises before doing any work</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section>
+    <div class="wrap" style="max-width:760px;">
+      <div class="center" style="margin-bottom:44px;">
+        <span class="eyebrow">Questions</span>
+        <h2 style="margin-top:18px;">Frequently Asked Questions</h2>
+      </div>
+      <details class="faq">
+        <summary>Why do I have to pay $1 to book a call?</summary>
+        <p>Ads bring in a lot of curious people who book calls and never show up. The $1 deposit is a simple commitment filter — it keeps our calendar open for serious applicants and means you get a properly prepared strategy session, not a rushed one. It's fully refundable, and you can even ask for it back after the call.</p>
+      </details>
+      <details class="faq">
+        <summary>Is this coaching or done-for-you?</summary>
+        <p>Done-for-you — and implemented-for-you. Our team builds your offer positioning, funnel, ads and sales assets. You stay involved in decisions and sales conversations; we handle the building, launching and optimising.</p>
+      </details>
+      <details class="faq">
+        <summary>How long until I see results?</summary>
+        <p>The program runs over 3 months. Most clients have their system live within the first weeks, then we optimise toward your agreed revenue target for the remainder. Your specific timeline is mapped out on the strategy call.</p>
+      </details>
+      <details class="faq">
+        <summary>What does the strategy call involve?</summary>
+        <p>It's a working session, not a hard-sell webinar in disguise. We audit your current offer and lead flow, map the gap between where you are and your revenue goal, and show you the exact system we'd build. If it's a fit for both sides, we'll discuss working together. If not, you leave with a plan either way.</p>
+      </details>
+      <details class="faq">
+        <summary>Why only 10 clients per month?</summary>
+        <p>Because this is genuinely done-for-you, our senior team works directly on every account. Capping intake is how we protect the results guarantee.</p>
+      </details>
+      <details class="faq">
+        <summary>What if I don't qualify?</summary>
+        <p>Then we'll tell you honestly — and point you to the resources that fit your current stage, so you can come back when the timing is right.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="center" style="padding-bottom:110px;">
+    <div class="wrap">
+      <div class="icon" style="font-size:44px;">✅</div>
+      <h2 style="max-width:760px;margin:22px auto 0;font-size:clamp(30px,4.4vw,48px);">
+        Stop Learning How to Grow. <span class="grad">Have It Built For You.</span>
+      </h2>
+      <p class="sub">10 spots per month. Every application personally reviewed within 24 hours.</p>
+      <div style="margin-top:38px;">
+        <a class="btn" href="/pre-booking">Apply Now — It Takes 2 Minutes <span class="arrow">→</span></a>
+        <span class="btn-note">🛡 Free 2-minute application · No obligation</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="brand">Processes for Profits · shanks@processesforprofits.com</p>
+    <p>This site is not a part of the Facebook™ website or Facebook™ Inc. Additionally, this site is NOT endorsed by Facebook™ in any way. FACEBOOK™ is a trademark of META™, Inc.</p>
+    <p>Earnings Disclaimer: Results shared on this page are the experiences of specific clients and are not typical. Your results will depend on your offer, market, work ethic and many other factors. We make no guarantee of specific income results, and nothing on this page should be taken as a promise of future earnings.</p>
+    <p>© 2026 Processes for Profits. All rights reserved.</p>
+  </footer>
+</body>
+</html>

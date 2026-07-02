@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Reserve Your Call — $1 | Processes for Profits</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+/* ============================================================
+   P4P DFY Funnel — shared styles
+   This file is duplicated inline inside each page's <style> tag
+   so every page stays fully self-contained for GHL.
+   Edit here first, then copy into the pages, to keep them in sync.
+   ============================================================ */
+:root {
+  --bg: #050816;
+  --card: rgba(255, 255, 255, 0.03);
+  --card-strong: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.1);
+  --accent: #10b981;
+  --accent-light: #34d399;
+  --accent-glow: rgba(16, 185, 129, 0.55);
+  --amber: #fbbf24;
+  --rose: #fb7185;
+  --sky: #38bdf8;
+  --text: #ffffff;
+  --muted: #94a3b8;
+  --dim: #64748b;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+.wrap { position: relative; max-width: 1020px; margin: 0 auto; padding: 0 24px; }
+.glow {
+  position: absolute; border-radius: 50%; filter: blur(90px); opacity: .18;
+  pointer-events: none; z-index: 0;
+}
+.glow-1 { top: -120px; left: -10%; width: 480px; height: 480px; background: var(--accent); }
+.glow-2 { top: 45%; right: -12%; width: 400px; height: 400px; background: #2563eb; }
+section { position: relative; z-index: 1; padding: 72px 0; }
+.center { text-align: center; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(52, 211, 153, .3); background: rgba(52, 211, 153, .1);
+  color: var(--accent-light); border-radius: 999px; padding: 7px 18px;
+  font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+}
+h1 { font-size: clamp(34px, 5.4vw, 58px); font-weight: 800; line-height: 1.1; letter-spacing: -.02em; }
+h2 { font-size: clamp(26px, 3.6vw, 38px); font-weight: 800; line-height: 1.2; }
+h3 { font-size: 20px; font-weight: 700; }
+.grad { background: linear-gradient(90deg, var(--accent-light), var(--accent)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.sub { color: var(--muted); font-size: clamp(17px, 2vw, 20px); max-width: 640px; margin: 20px auto 0; }
+.note { color: var(--dim); font-size: 14px; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--accent); color: #041014; text-decoration: none;
+  font-size: 19px; font-weight: 800; padding: 18px 38px; border-radius: 18px;
+  box-shadow: 0 0 40px -8px var(--accent-glow); border: none; cursor: pointer;
+  transition: background .2s, transform .2s, box-shadow .2s;
+}
+.btn:hover { background: var(--accent-light); transform: translateY(-1px); box-shadow: 0 0 60px -8px var(--accent-glow); }
+.btn .arrow { transition: transform .2s; }
+.btn:hover .arrow { transform: translateX(4px); }
+.btn-note { display: block; margin-top: 10px; font-size: 12.5px; color: var(--dim); }
+
+.card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 26px;
+}
+.grid { display: grid; gap: 20px; }
+@media (min-width: 760px) {
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+.icon { font-size: 26px; line-height: 1; }
+.muted { color: var(--muted); }
+
+.embed-slot {
+  border: 2px dashed rgba(52, 211, 153, .4); border-radius: 20px;
+  background: rgba(52, 211, 153, .04); padding: 48px 24px; text-align: center;
+  color: var(--muted); font-size: 15px;
+}
+.embed-slot strong { color: var(--accent-light); }
+.embed-slot code {
+  display: inline-block; margin-top: 8px; background: rgba(255,255,255,.06);
+  border-radius: 8px; padding: 3px 10px; font-size: 13px; color: var(--text);
+}
+
+.steps { counter-reset: step; }
+.step-num {
+  display: flex; width: 46px; height: 46px; align-items: center; justify-content: center;
+  background: rgba(52, 211, 153, .12); color: var(--accent-light);
+  font-weight: 800; font-size: 18px; border-radius: 14px; margin-bottom: 14px;
+}
+.checklist { list-style: none; }
+.checklist li { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; color: var(--muted); }
+.checklist .tick { color: var(--accent); font-weight: 800; flex-shrink: 0; }
+.checklist .cross { color: var(--rose); font-weight: 800; flex-shrink: 0; }
+
+details.faq {
+  background: var(--card); border: 1px solid var(--border); border-radius: 18px;
+  padding: 22px 26px; margin-bottom: 14px;
+}
+details.faq[open] { border-color: rgba(52, 211, 153, .35); }
+details.faq summary { cursor: pointer; font-weight: 700; font-size: 17px; list-style: none; }
+details.faq summary::-webkit-details-marker { display: none; }
+details.faq p { margin-top: 12px; color: var(--muted); }
+
+footer {
+  border-top: 1px solid var(--border); padding: 44px 24px; text-align: center;
+  position: relative; z-index: 1;
+}
+footer p { max-width: 860px; margin: 0 auto 14px; font-size: 12px; color: var(--dim); }
+footer .brand { font-size: 13px; font-weight: 600; color: var(--muted); }
+footer a { color: var(--accent-light); }
+
+.progress-wrap { max-width: 560px; margin: 0 auto 36px; }
+.progress-labels { display: flex; justify-content: space-between; font-size: 12px; color: var(--dim); margin-bottom: 8px; }
+.progress-bar { height: 8px; border-radius: 999px; background: rgba(255,255,255,.1); overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 999px; background: var(--accent); }
+
+.video-frame {
+  position: relative; width: 100%; padding-top: 56.25%;
+  border-radius: 20px; overflow: hidden; border: 1px solid var(--border); background: #0b1120;
+}
+.video-frame iframe, .video-frame .embed-slot-abs {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+}
+  </style>
+</head>
+<body>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+
+  <section class="center" style="padding-top:72px;padding-bottom:28px;">
+    <div class="wrap" style="max-width:760px;">
+      <span class="eyebrow">Application received</span>
+      <div class="icon" style="font-size:52px;margin-top:26px;">✅</div>
+      <h1 style="font-size:clamp(28px,4.4vw,44px);margin-top:18px;">
+        Congratulations — <span class="grad">You Pre-Qualify.</span>
+      </h1>
+      <p class="sub" style="font-size:17px;">
+        Based on your answers, your business is at the stage where the
+        Done-For-You system works best. One small step left before you pick a
+        time with us.
+      </p>
+
+      <div class="progress-wrap" style="margin-top:36px;">
+        <div class="progress-labels"><span>Step 2 of 3 — Reserve your call</span><span>Next: pick your time</span></div>
+        <div class="progress-bar"><div class="progress-fill" style="width:66%;"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap" style="max-width:760px;">
+      <div class="card" style="border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.05);padding:34px;">
+        <h2 style="font-size:24px;">💵 Reserve your strategy call — $1</h2>
+        <p class="muted" style="margin-top:14px;">
+          Ads bring us hundreds of applications, and no-shows steal time from serious
+          founders. The refundable $1 deposit confirms you're real and committed —
+          nothing more. It guarantees your slot and a fully prepared session with our
+          senior team.
+        </p>
+        <ul class="checklist" style="margin-top:20px;">
+          <li><span class="tick">✓</span> 100% refundable — just ask on the call</li>
+          <li><span class="tick">✓</span> Unlocks our live calendar immediately after payment</li>
+          <li><span class="tick">✓</span> No subscription, no hidden charges — a single $1 payment</li>
+        </ul>
+
+        <!-- ▼▼▼ GHL ORDER FORM / CHECKOUT EMBED ▼▼▼
+             Replace the .embed-slot div below with your GHL payment element.
+
+             Option A (recommended — this page IS a GHL funnel step):
+               add a 1-step Order Form element to this step in the funnel builder
+               and attach the $1 "Strategy Call Deposit" product.
+             Option B (embed from another funnel):
+               paste the GHL order-form iframe embed code here.
+
+             After payment, the funnel step's settings should send the buyer to /book-a-call
+        -->
+        <div class="embed-slot" style="margin-top:26px;">
+          <strong>PASTE / PLACE YOUR GHL $1 ORDER FORM HERE</strong><br />
+          Product: <code>Strategy Call Deposit — $1.00</code><br /><br />
+          On success → redirect to <code>/book-a-call</code>
+        </div>
+        <!-- ▲▲▲ GHL ORDER FORM EMBED ▲▲▲ -->
+
+        <p class="center note" style="margin-top:18px;">🔒 Secure checkout · Powered by your card processor via GoHighLevel</p>
+      </div>
+
+      <div style="margin-top:22px;">
+        <details class="faq">
+          <summary>Why charge anything at all?</summary>
+          <p>Running ads means our calendar gets hit by bots, spam and the merely curious. A $1 card confirmation is the simplest honest filter we've found — it costs you almost nothing but proves you're a real person who intends to show up. That keeps call quality high for everyone, including you.</p>
+        </details>
+        <details class="faq">
+          <summary>Is it really refundable?</summary>
+          <p>Yes. Ask at any point — before, during or after the call — and we'll return it, no questions asked.</p>
+        </details>
+      </div>
+
+      <p class="center note" style="margin-top:26px;padding-bottom:60px;">
+        Questions first? Email
+        <a href="mailto:shanks@processesforprofits.com" style="color:var(--accent-light);">shanks@processesforprofits.com</a>
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    <p class="brand">Processes for Profits · shanks@processesforprofits.com</p>
+    <p>This site is not a part of the Facebook™ website or Facebook™ Inc. Additionally, this site is NOT endorsed by Facebook™ in any way. FACEBOOK™ is a trademark of META™, Inc.</p>
+    <p>© 2026 Processes for Profits. All rights reserved.</p>
+  </footer>
+</body>
+</html>
