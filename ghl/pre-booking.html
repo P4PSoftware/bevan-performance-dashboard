@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
-  <title>Apply — Done-For-You Growth System | Processes for Profits</title>
+  <title>Apply — Client Acquisition Machine | Processes for Profits</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <style>
@@ -143,20 +143,23 @@ footer a { color: var(--accent-light); }
   <div class="glow glow-1"></div>
   <div class="glow glow-2"></div>
 
-  <section class="center" style="padding-top:72px;padding-bottom:28px;">
+  <section class="center" style="padding-top:64px;padding-bottom:24px;">
     <div class="wrap" style="max-width:760px;">
-      <span class="eyebrow">Processes for Profits · DFY Application</span>
+      <span class="eyebrow">Processes for Profits · Application</span>
       <h1 style="font-size:clamp(28px,4.4vw,44px);margin-top:24px;">
-        Let's See If the Done-For-You System <span class="grad">Fits Your Business</span>
+        See If The Client Acquisition Machine <span class="grad">Is A Fit For Your Business</span>
       </h1>
       <p class="sub" style="font-size:17px;">
-        Takes about 2 minutes. Be honest — the questions decide whether the DFY
-        system fits your stage, not whether we like you. Every application is
-        personally reviewed.
+        Takes about 2 minutes. Answer honestly — these questions decide whether the machine
+        fits your stage, not whether we like you. Every application is personally reviewed.
+      </p>
+      <p class="note" style="margin-top:16px;max-width:600px;margin-left:auto;margin-right:auto;">
+        Please don't apply if you're looking for free training, cheap leads, a revenue-share-only deal,
+        or if you're not yet in a position to invest in growing your business.
       </p>
 
-      <div class="progress-wrap" style="margin-top:36px;">
-        <div class="progress-labels"><span>Step 1 of 3 — Application</span><span>Next: reserve your call</span></div>
+      <div class="progress-wrap" style="margin-top:32px;">
+        <div class="progress-labels"><span>Step 1 of 3 — Application</span><span>Next: confirm your call</span></div>
         <div class="progress-bar"><div class="progress-fill" style="width:33%;"></div></div>
       </div>
     </div>
@@ -166,41 +169,52 @@ footer a { color: var(--accent-light); }
     <div class="wrap" style="max-width:760px;">
 
       <!-- ▼▼▼ GHL SURVEY EMBED ▼▼▼
-           Replace the .embed-slot div below with your GHL survey embed code.
-           In GHL: Sites → Surveys → your DFY application survey → Integrate → copy the embed code.
-           It looks like:
+           Replace the .embed-slot below with your GHL survey embed code.
+           GHL: Sites → Surveys → your application survey → Integrate → Embed.
 
-           <iframe src="https://api.leadconnectorhq.com/widget/survey/YOUR_SURVEY_ID"
-                   style="border:none;width:100%;" scrolling="no"
-                   id="YOUR_SURVEY_ID" title="DFY Application"></iframe>
-           <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+           RECOMMENDED QUESTIONS (one per slide):
+             • Name, email, phone
+             • Which best describes you?  (coach / consultant / expert-led service / agency / other)
+             • Current monthly revenue  (<$5k / $5–10k / $10–20k / $20–50k / $50k+)
+             • Primary offer price point  (<$1k / $1–3k / $3–10k / $10k+)
+             • Biggest challenge right now  (inconsistent clients / too many moving parts & complexity /
+                 leads don't convert / no predictable system)
+             • Are you ready to invest ~$3k/month in ad spend through your own account?  (yes / not yet)
+             • If it's a fit, are you in a position to invest in your growth right now?
+                 (yes now / possibly, depending on details / no, not right now)
+             • Are you the decision-maker?  (yes / shared / need approval)
 
-           IMPORTANT — survey logic (set inside the GHL survey builder):
-           - Qualified  → redirect to /dfy-application-payment
-           - Not a fit  → show a polite disqualification message (or redirect to your main site)
+           QUALIFICATION LOGIC (set in the survey builder):
+             DISQUALIFY → polite "not yet" message + tag `dfy-not-qualified` when ANY of:
+               - revenue under $5k/month
+               - "not yet" on ad spend readiness
+               - "no, not right now" on investment
+               - not a coach/consultant/expert-led/agency
+             QUALIFY → redirect to /dfy-application-payment + tag `dfy-qualified`
+           (Ad-spend readiness is the most important gate — it's the historical failure point.)
       -->
       <div class="embed-slot">
         <strong>PASTE YOUR GHL SURVEY EMBED CODE HERE</strong><br />
-        Sites → Surveys → DFY Application → <code>Integrate → Embed</code><br /><br />
-        Survey logic: qualified → redirect to <code>/dfy-application-payment</code> ·
-        not qualified → polite message
+        Sites → Surveys → Application → <code>Integrate → Embed</code><br /><br />
+        Qualified → redirect to <code>/dfy-application-payment</code> ·
+        Not a fit → polite "not yet" message
       </div>
       <!-- ▲▲▲ GHL SURVEY EMBED ▲▲▲ -->
 
-      <p class="center note" style="margin-top:26px;">
+      <p class="center note" style="margin-top:24px;">
         🔒 Your answers are private and only used to review your application.
       </p>
     </div>
   </section>
 
-  <section style="padding-top:24px;padding-bottom:96px;">
+  <section style="padding-top:24px;padding-bottom:88px;">
     <div class="wrap" style="max-width:760px;">
       <div class="card">
         <h3 style="margin-bottom:14px;">What happens after you apply</h3>
         <ul class="checklist" style="margin-bottom:0;">
-          <li><span class="tick">1.</span> If you pre-qualify, you'll be taken straight to reserve your strategy call with a refundable $1 deposit (our spam filter — ads attract tyre-kickers).</li>
-          <li><span class="tick">2.</span> You'll pick a call time on our live calendar.</li>
-          <li><span class="tick">3.</span> On the call we map your growth plan — and only if we both agree it's a fit, we'll talk about the DFY program.</li>
+          <li><span class="tick">1.</span> If you pre-qualify, you'll confirm your call with a refundable $1 deposit — our seriousness filter that keeps spam and no-shows off the calendar.</li>
+          <li><span class="tick">2.</span> You'll book your Client Acquisition Diagnosis on our live calendar.</li>
+          <li><span class="tick">3.</span> On the call we map the gap to consistent months and show you exactly what we'd build — and only if it's a fit both ways, we'll talk about working together.</li>
         </ul>
       </div>
     </div>
@@ -209,7 +223,7 @@ footer a { color: var(--accent-light); }
   <footer>
     <p class="brand">Processes for Profits · shanks@processesforprofits.com</p>
     <p>This site is not a part of the Facebook™ website or Facebook™ Inc. Additionally, this site is NOT endorsed by Facebook™ in any way. FACEBOOK™ is a trademark of META™, Inc.</p>
-    <p>© 2026 Processes for Profits. All rights reserved.</p>
+    <p>© 2026 Processes for Profits. All rights reserved. · Emerald Gardens, Invicta Ave, Johannesburg, South Africa, 1681</p>
   </footer>
 </body>
 </html>
